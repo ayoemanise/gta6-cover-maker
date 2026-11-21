@@ -3,20 +3,74 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cover Snap</title>
+<title>Sunset Panels — GTA-style cover art maker</title>
 <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 <main class="app">
-  <section class="controls">
-    <h1>Cover Snap</h1>
-    <p>A photo and a caption, made into a square cover.</p>
-    <label>Photo <input id="photo" type="file" accept="image/*"></label>
-    <label>Caption <input id="caption" type="text" maxlength="40" value="Sunset Heist"></label>
-    <button id="export" type="button">Export PNG 1080 x 1080</button>
-    <p id="status" role="status"></p>
+  <header>
+    <div class="brand">
+      <h1>Sunset Panels</h1>
+      <small>GTA-style cover art from your own photos</small>
+    </div>
+    <div class="spacer"></div>
+    <label class="field"><span>Template</span>
+      <select id="template-select"></select>
+    </label>
+    <label class="field"><span>Post size</span>
+      <select id="size-select"></select>
+    </label>
+    <button id="export-button" type="button" class="action primary">Export PNG</button>
+    <span id="status-line" role="status"></span>
+  </header>
+
+  <section class="controls-row">
+    <aside class="controls">
+      <h2>Photos</h2>
+      <label class="field"><span>Load from your machine</span>
+        <input id="photo-input" type="file" accept="image/*" multiple>
+      </label>
+      <div id="photo-strip"></div>
+      <div class="row">
+        <button id="fill-panels" type="button" class="action">Fill panels</button>
+        <button id="clear-panel" type="button" class="action">Clear selected</button>
+      </div>
+
+      <h2>Caption</h2>
+      <label class="field"><span>Big title</span>
+        <input id="caption-input" type="text" maxlength="42" value="PALM CITY">
+      </label>
+      <label class="field"><span>Tagline</span>
+        <input id="tagline-input" type="text" maxlength="64" value="STORIES FROM THE NEON COAST">
+      </label>
+
+      <h2>Look</h2>
+      <label class="field"><span>Grade strength</span>
+        <input id="grade-slider" type="range" min="0" max="1" step="0.05" value="0.8">
+      </label>
+      <div class="row">
+        <label><input id="duotone-toggle" type="checkbox" checked> Duotone</label>
+        <label><input id="halftone-toggle" type="checkbox" checked> Halftone</label>
+      </div>
+      <div class="row">
+        <label><input id="grain-toggle" type="checkbox" checked> Film grain</label>
+        <label><input id="art-toggle" type="checkbox" checked> Sky art</label>
+      </div>
+
+      <h2>Selected panel</h2>
+      <label class="field"><span>Zoom crop</span>
+        <input id="panel-zoom" type="range" min="1" max="4" step="0.01" value="1">
+      </label>
+      <div class="row">
+        <button id="panel-reset" type="button" class="action">Reset crop</button>
+      </div>
+      <p id="panel-info">Click a panel to select it; drag to move its crop, wheel to zoom.</p>
+    </aside>
+
+    <section class="stage">
+      <canvas id="cover-canvas" width="1080" height="1080" aria-label="The cover preview"></canvas>
+    </section>
   </section>
-  <canvas id="cover" width="1080" height="1080" aria-label="The cover"></canvas>
 </main>
 <script type="module" src="./src/main.js"></script>
 </body>

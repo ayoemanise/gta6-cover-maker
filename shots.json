@@ -1,5 +1,6 @@
 [
-  { "name": "1-cover.jpg", "query": "?shot=cover&photo=pier&caption=Sunset%20Heist", "w": 1080, "h": 1080 },
-  { "name": "2-editor.jpg", "query": "?shot=editor&photo=boulevard&caption=Boulevard%20Queen", "w": 1280, "h": 720 },
-  { "name": "3-cover.jpg", "query": "?shot=cover&photo=boulevard&caption=Boulevard%20Queen", "w": 1080, "h": 1080 }
+  { "name": "1-cover-wide.jpg", "query": "?shot=cover&size=wide&w=1280&h=720&template=feature&photos=pier,boulevard&caption=NEON%20COAST&tagline=STORIES%20FROM%20THE%20STRIP", "w": 1280, "h": 720 },
+  { "name": "2-cover-square.jpg", "query": "?shot=cover&size=square&w=1080&h=1080&template=mosaic-side&photos=pier,boulevard&caption=PALM%20CITY%20HEAT&tagline=EVERY%20NIGHT%20PAYS%20IN%20NEON", "w": 1080, "h": 1080 },
+  { "name": "3-editor.jpg", "query": "?shot=editor&template=triptych&photos=pier,boulevard&caption=MIDNIGHT%20MIRAGE&tagline=COME%20FOR%20THE%20SUN%2C%20STAY%20FOR%20THE%20STORM", "w": 1280, "h": 720 },
+  { "name": "4-cover-tall.jpg", "query": "?shot=cover&size=tall&w=1024&h=1280&template=quad&photos=boulevard,pier&caption=SUNSET%20SYNDICATE&tagline=RUN%20THE%20COAST%2C%20OWN%20THE%20NIGHT", "w": 1024, "h": 1280 }
 ]
